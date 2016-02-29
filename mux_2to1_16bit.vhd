@@ -11,12 +11,12 @@ end mux_2to1_16bit;
 architecture Behavioral of mux_2to1_16bit is
 
 begin
-	--Sends in1 to muxout if sel=0. Sends in2 to muxout if sel=1. Otherwise, in3 is sent to muxout
+	--Sends in1 to muxout if sel=0. Sends in2 to muxout if sel=1.
 	process(in1, in2, sel)
 	begin
 		case sel is
-			when '1' => muxout <= in1;
-			when others => muxout <= in2;
+			when '1' => muxout <= in2;
+			when others => muxout <= in1;
 		end case;
 	end process;
 

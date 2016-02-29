@@ -1,4 +1,4 @@
-V3 35
+V3 41
 FL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" 2016/02/22.19:15:08 P.20131013
 FL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/branch_handler.vhd" 2016/02/24.03:12:16 P.20131013
 EN work/branch_handler 1456312380 \
@@ -35,13 +35,13 @@ EN work/ALU 1456477559 \
 AR work/ALU/Behavioral 1456477560 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd" \
       EN work/ALU 1456477559
-FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" 2016/02/26.00:40:46 P.20131013
-EN work/control 1456477561 \
+FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" 2016/02/28.21:10:22 P.20131013
+EN work/control 1456722671 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/control/Behavioral 1456477562 \
+AR work/control/Behavioral 1456722672 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" \
-      EN work/control 1456477561
+      EN work/control 1456722671
 FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" 2016/02/26.00:40:46 P.20131013
 EN work/ROM_VHDL 1456477563 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" \
@@ -49,6 +49,13 @@ EN work/ROM_VHDL 1456477563 \
 AR work/ROM_VHDL/BHV 1456477564 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" \
       EN work/ROM_VHDL 1456477563
+FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_1to2_16bit.vhd" 2016/02/28.20:18:56 P.20131013
+EN work/demux_1to2_16bit 1456719538 \
+      FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_1to2_16bit.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/demux_1to2_16bit/Behavioral 1456719539 \
+      FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_1to2_16bit.vhd" \
+      EN work/demux_1to2_16bit 1456719538
 FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd" 2016/02/26.00:43:00 P.20131013
 EN work/demux_3to1_16bit 1456477565 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd" \
@@ -56,6 +63,13 @@ EN work/demux_3to1_16bit 1456477565 \
 AR work/demux_3to1_16bit/Behavioral 1456477566 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd" \
       EN work/demux_3to1_16bit 1456477565
+FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_2to1_16bit.vhd" 2016/02/28.20:43:32 P.20131013
+EN work/mux_2to1_16bit 1456721019 \
+      FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_2to1_16bit.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/mux_2to1_16bit/Behavioral 1456721020 \
+      FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_2to1_16bit.vhd" \
+      EN work/mux_2to1_16bit 1456721019
 FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd" 2016/02/26.00:40:47 P.20131013
 EN work/mux_3to1_16bit 1456477567 \
       FL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd" \

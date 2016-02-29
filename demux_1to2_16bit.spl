@@ -1,0 +1,7 @@
+[Inputs]
+sel
+=demux_in[15:0]=
+[Outputs]
+=out1[15:0]=
+=out2[15:0]=
+[BiDir]

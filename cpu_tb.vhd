@@ -63,22 +63,20 @@ BEGIN
 		
 		-- hold reset state for 100 ns.
 		RST <= '0';
---		INSTR <= X"0000";
       wait for clk_period*10;	
-		wait for clk_period;
 		
 		--in r0
-		EXT_IN <= X"0001";
+		EXT_IN <= X"0013";
 		ADDR <= "0000010";
 		wait for clk_period;	
 		
 		--in r0
-		EXT_IN <= X"0002";
+		EXT_IN <= X"003C";
 		ADDR <= "0000011";
 		wait for clk_period;	
 		
 		--in r0
-		EXT_IN <= X"0003";
+		EXT_IN <= X"005A";
 		ADDR <= "0000100";
 		wait for clk_period;	
 		
@@ -88,6 +86,19 @@ BEGIN
 			ADDR <= std_logic_vector(to_unsigned(I,7));
 			wait for clk_period;
 		end loop;
+		
+		--in r4
+		EXT_IN <= X"1234";
+		ADDR <= std_logic_vector(to_unsigned(26,7));
+		wait for clk_period;	
+		EXT_IN <= X"0000";
+		
+		for I in 27 to 31 loop
+			ADDR <= std_logic_vector(to_unsigned(I,7));
+			wait for clk_period;
+		end loop;
+		
+		
 		
 		
 --		--IN R0

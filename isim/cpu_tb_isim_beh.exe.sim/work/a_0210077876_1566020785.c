@@ -45,7 +45,7 @@ static void work_a_0210077876_1566020785_p_0(char *t0)
     char *t13;
     char *t14;
 
-LAB0:    xsi_set_current_line(50, ng0);
+LAB0:    xsi_set_current_line(60, ng0);
     t1 = (t0 + 992U);
     t2 = ieee_p_2592010699_sub_1744673427_503743352(IEEE_P_2592010699, t1, 0U, 0U);
     if (t2 != 0)
@@ -56,7 +56,7 @@ LAB3:    t1 = (t0 + 3072);
     *((int *)t1) = 1;
 
 LAB1:    return;
-LAB2:    xsi_set_current_line(51, ng0);
+LAB2:    xsi_set_current_line(61, ng0);
     t3 = (t0 + 1192U);
     t4 = *((char **)t3);
     t3 = (t0 + 5436U);
@@ -65,7 +65,7 @@ LAB2:    xsi_set_current_line(51, ng0);
     t7 = *((char **)t6);
     t6 = (t7 + 0);
     *((int *)t6) = t5;
-    xsi_set_current_line(52, ng0);
+    xsi_set_current_line(62, ng0);
     t1 = (t0 + 1648U);
     t3 = *((char **)t1);
     t1 = (t0 + 1768U);
@@ -73,7 +73,7 @@ LAB2:    xsi_set_current_line(51, ng0);
     t5 = *((int *)t4);
     t8 = (t5 - 0);
     t9 = (t8 * 1);
-    xsi_vhdl_check_range_of_index(0, 25, 1, t5);
+    xsi_vhdl_check_range_of_index(0, 31, 1, t5);
     t10 = (16U * t9);
     t11 = (0 + t10);
     t1 = (t3 + t11);

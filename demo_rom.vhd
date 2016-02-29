@@ -13,7 +13,7 @@ end ROM_VHDL;
 
 architecture BHV of ROM_VHDL is
 
-    type ROM_TYPE is array (0 to 25) of std_logic_vector (15 downto 0);
+    type ROM_TYPE is array (0 to 31) of std_logic_vector (15 downto 0);
 
     constant rom_content : ROM_TYPE := (
    "0000000000000000",
@@ -41,7 +41,17 @@ architecture BHV of ROM_VHDL is
 	"0000000000000000",  -- NOP
 	"0000000000000000",  -- NOP
 	"0100000010000000",  -- OUT r2	
-	"0000000000000000"); -- NOP
+	"0000000000000000",  -- NOP
+	
+	"0100001100000000",  -- IN R4 (Get memory addr1)
+	"0010001100011000",	-- STORE R4 R3
+	"0010011011010000",  -- MOV R3 R2
+	"0100000011000000",  -- OUT r3
+	"0010000011100000",  --LOAD R3 R4
+	"0100000011000000"  -- OUT r3
+	
+	
+	); 
 begin
 
 p1:    process (clk)

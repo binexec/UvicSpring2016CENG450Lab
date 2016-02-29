@@ -4,6 +4,9 @@ RST
 =INSTR[15:0]=
 [Outputs]
 RegWriteEn
+Reg1ToMemAddr
+MemWE
+RegWriteSrc
 =RegRead1[2:0]=
 =RegRead2[2:0]=
 =RegWrite[2:0]=

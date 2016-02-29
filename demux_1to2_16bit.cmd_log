@@ -1,0 +1,2 @@
+vhdtdtfi -lib work demux_1to2_16bit.vhd -prj lab2 -o demux_1to2_16bit.spl -module demux_1to2_16bit -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e demux_1to2_16bit.spl {C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_1to2_16bit.sym} 
