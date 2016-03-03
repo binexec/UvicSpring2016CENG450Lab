@@ -1,0 +1,245 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : cpu_pipelined.vf
+// /___/   /\     Timestamp : 03/01/2016 02:32:50
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -sympath "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ipcore_dir" -intstyle ise -family spartan3e -verilog "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_pipelined.vf" -w "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_pipelined.sch"
+//Design Name: cpu_pipelined
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module IBUF16_MXILINX_cpu_pipelined(I, 
+                                    O);
+
+    input [15:0] I;
+   output [15:0] O;
+   
+   
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_30 (.I(I[8]), 
+                 .O(O[8]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_31 (.I(I[9]), 
+                 .O(O[9]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_32 (.I(I[10]), 
+                 .O(O[10]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_33 (.I(I[11]), 
+                 .O(O[11]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_34 (.I(I[15]), 
+                 .O(O[15]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_35 (.I(I[14]), 
+                 .O(O[14]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_36 (.I(I[13]), 
+                 .O(O[13]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_37 (.I(I[12]), 
+                 .O(O[12]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_38 (.I(I[4]), 
+                 .O(O[4]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_39 (.I(I[5]), 
+                 .O(O[5]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_40 (.I(I[6]), 
+                 .O(O[6]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_41 (.I(I[7]), 
+                 .O(O[7]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_42 (.I(I[3]), 
+                 .O(O[3]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_43 (.I(I[2]), 
+                 .O(O[2]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_44 (.I(I[1]), 
+                 .O(O[1]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_45 (.I(I[0]), 
+                 .O(O[0]));
+endmodule
+`timescale 1ns / 1ps
+
+module ram_14x16_MUSER_cpu_pipelined(ADDR, 
+                                     CLK, 
+                                     D_IN, 
+                                     WE, 
+                                     D_OUT);
+
+    input [15:0] ADDR;
+    input CLK;
+    input [15:0] D_IN;
+    input WE;
+   output [15:0] D_OUT;
+   
+   
+   blockram_14x16  XLXI_1 (.addra(ADDR[13:0]), 
+                          .clka(CLK), 
+                          .dina(D_IN[15:0]), 
+                          .wea(WE), 
+                          .douta(D_OUT[15:0]));
+endmodule
+`timescale 1ns / 1ps
+
+module cpu_pipelined(ADDR, 
+                     CLK, 
+                     EXT_IN, 
+                     RST, 
+                     EXTIN_OUT, 
+                     instr_in, 
+                     instr_out, 
+                     N_FLAG, 
+                     OUTPUT, 
+                     Z_FLAG);
+
+    input [6:0] ADDR;
+    input CLK;
+    input [15:0] EXT_IN;
+    input RST;
+   output [15:0] EXTIN_OUT;
+   output [15:0] instr_in;
+   output [15:0] instr_out;
+   output N_FLAG;
+   output [15:0] OUTPUT;
+   output Z_FLAG;
+   
+   wire [15:0] ALU_RESULT;
+   wire [15:0] EXTIN;
+   wire [15:0] MEMADDR;
+   wire [15:0] MEMDATA;
+   wire [15:0] MEMOUT;
+   wire MEMWE;
+   wire [15:0] WBDATA;
+   wire [15:0] XLXN_4;
+   wire XLXN_8;
+   wire [2:0] XLXN_23;
+   wire [2:0] XLXN_24;
+   wire [2:0] XLXN_48;
+   wire [2:0] XLXN_49;
+   wire [15:0] XLXN_97;
+   wire [15:0] XLXN_103;
+   wire [1:0] XLXN_104;
+   wire XLXN_316;
+   wire [15:0] XLXN_341;
+   wire [15:0] XLXN_342;
+   wire [15:0] XLXN_368;
+   wire XLXN_372;
+   wire XLXN_454;
+   wire [1:0] XLXN_455;
+   wire XLXN_477;
+   wire [15:0] instr_in_DUMMY;
+   wire [15:0] instr_out_DUMMY;
+   wire [15:0] EXTIN_OUT_DUMMY;
+   
+   assign EXTIN_OUT[15:0] = EXTIN_OUT_DUMMY[15:0];
+   assign instr_in[15:0] = instr_in_DUMMY[15:0];
+   assign instr_out[15:0] = instr_out_DUMMY[15:0];
+   ALU  XLXI_1 (.alu_mode(XLXN_49[2:0]), 
+               .clk(XLXN_316), 
+               .in1(XLXN_342[15:0]), 
+               .in2(XLXN_103[15:0]), 
+               .rst(XLXN_477), 
+               .n_flag(N_FLAG), 
+               .result(ALU_RESULT[15:0]), 
+               .z_flag(Z_FLAG));
+   mux_3to1_16bit  XLXI_2 (.in1(XLXN_97[15:0]), 
+                          .in2(XLXN_4[15:0]), 
+                          .in3(EXTIN_OUT_DUMMY[15:0]), 
+                          .sel(XLXN_104[1:0]), 
+                          .muxout(XLXN_103[15:0]));
+   control  XLXI_3 (.CLK(XLXN_316), 
+                   .INSTR(instr_out_DUMMY[15:0]), 
+                   .RST(XLXN_477), 
+                   .ALUIN2Src(XLXN_104[1:0]), 
+                   .ALUMode(XLXN_49[2:0]), 
+                   .ALU_Dest(XLXN_455[1:0]), 
+                   .ImmData(XLXN_4[15:0]), 
+                   .MemWE(MEMWE), 
+                   .RegRead1(XLXN_23[2:0]), 
+                   .RegRead2(XLXN_24[2:0]), 
+                   .RegWrite(XLXN_48[2:0]), 
+                   .RegWriteEn(XLXN_8), 
+                   .RegWriteSrc(XLXN_372), 
+                   .Reg1ToMemAddr(XLXN_454));
+   register_file  XLXI_11 (.clk(XLXN_316), 
+                          .rd_index1(XLXN_23[2:0]), 
+                          .rd_index2(XLXN_24[2:0]), 
+                          .rst(XLXN_477), 
+                          .wr_data(WBDATA[15:0]), 
+                          .wr_enable(XLXN_8), 
+                          .wr_index(XLXN_48[2:0]), 
+                          .rd_data1(XLXN_341[15:0]), 
+                          .rd_data2(XLXN_97[15:0]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  XLXI_29 (.I(CLK), 
+                 .O(XLXN_316));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  XLXI_30 (.I(RST), 
+                 .O(XLXN_477));
+   (* HU_SET = "XLXI_42_0" *) 
+   IBUF16_MXILINX_cpu_pipelined  XLXI_42 (.I(EXT_IN[15:0]), 
+                                         .O(EXTIN[15:0]));
+   ROM_VHDL  XLXI_45 (.addr(ADDR[6:0]), 
+                     .clk(XLXN_316), 
+                     .data(instr_in_DUMMY[15:0]));
+   demux_3to1_16bit  XLXI_46 (.muxin(ALU_RESULT[15:0]), 
+                             .sel(XLXN_455[1:0]), 
+                             .muxout1(XLXN_368[15:0]), 
+                             .muxout2(MEMDATA[15:0]), 
+                             .muxout3(OUTPUT[15:0]));
+   demux_1to2_16bit  XLXI_48 (.demux_in(XLXN_341[15:0]), 
+                             .sel(XLXN_454), 
+                             .out1(XLXN_342[15:0]), 
+                             .out2(MEMADDR[15:0]));
+   ram_14x16_MUSER_cpu_pipelined  XLXI_49 (.ADDR(MEMADDR[15:0]), 
+                                          .CLK(XLXN_316), 
+                                          .D_IN(MEMDATA[15:0]), 
+                                          .WE(MEMWE), 
+                                          .D_OUT(MEMOUT[15:0]));
+   mux_2to1_16bit  XLXI_50 (.in1(MEMOUT[15:0]), 
+                           .in2(XLXN_368[15:0]), 
+                           .sel(XLXN_372), 
+                           .muxout(WBDATA[15:0]));
+   IF_DE_pipeline  XLXI_54 (.clk(XLXN_316), 
+                           .ext_in(EXTIN[15:0]), 
+                           .rom_data_in(instr_in_DUMMY[15:0]), 
+                           .rst(XLXN_477), 
+                           .ext_in_out(EXTIN_OUT_DUMMY[15:0]), 
+                           .instr_out(instr_out_DUMMY[15:0]));
+endmodule

@@ -1,1 +1,4 @@
-select figure at 1630 639 8 -branches -sn=1
+select figure at 2498 2598 8 -branches -sn=1
+select all in -2147483648 -2147483648 2147483647 2147483647 -sn=1
+select all in -2147483648 -2147483648 2147483647 2147483647 -sn=1
+select figure at 430 2320 8 -branches -sn=1

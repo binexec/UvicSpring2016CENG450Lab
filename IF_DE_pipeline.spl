@@ -1,0 +1,9 @@
+[Inputs]
+clk
+rst
+=rom_data_in[15:0]=
+=ext_in[15:0]=
+[Outputs]
+=instr_out[15:0]=
+=ext_in_out[15:0]=
+[BiDir]

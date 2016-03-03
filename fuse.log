@@ -1,52 +1,18 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb_isim_beh.exe -prj C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb_beh.prj work.cpu_tb work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline_tb_isim_beh.exe -prj C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline_tb_beh.prj work.DE_EX_pipeline_tb 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 16
 Turning on mult-threading, number of parallel sub-compilation jobs: 32 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ipcore_dir/blockram_14x16.v" into library work
-Analyzing Verilog file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ram_14x16.vf" into library work
-Analyzing Verilog file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu.vf" into library work
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/register.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_2to1_16bit.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_1to2_16bit.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd" into library work
-Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb.vhd" into library work
+Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline.vhd" into library work
+Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Compiling module glbl
-Compiling module IBUF
-Compiling module IBUF16_MXILINX_cpu
-Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
-Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
-Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
-Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
-Compiling module blockram_14x16
-Compiling module ram_14x16_MUSER_cpu
-Compiling module cpu
 Compiling package standard
 Compiling package std_logic_1164
-Compiling package numeric_std
-Compiling package vcomponents
-Compiling package vl_types
-Compiling architecture behavioral of entity ALU [alu_default]
-Compiling package std_logic_arith
-Compiling package std_logic_unsigned
-Compiling architecture behavioural of entity register_file [register_file_default]
-Compiling architecture behavioral of entity control [control_default]
-Compiling architecture behavioral of entity mux_3to1_16bit [mux_3to1_16bit_default]
-Compiling architecture bhv of entity ROM_VHDL [rom_vhdl_default]
-Compiling architecture behavioral of entity demux_3to1_16bit [demux_3to1_16bit_default]
-Compiling architecture behavioral of entity demux_1to2_16bit [demux_1to2_16bit_default]
-Compiling architecture behavioral of entity mux_2to1_16bit [mux_2to1_16bit_default]
-Compiling architecture behavioral of entity cpu_tb
+Compiling architecture behavioral of entity DE_EX_pipeline [de_ex_pipeline_default]
+Compiling architecture behavior of entity de_ex_pipeline_tb
 Time Resolution for simulation is 1ps.
-Compiled 24 VHDL Units
-Compiled 10 Verilog Units
-Built simulation executable C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb_isim_beh.exe
-Fuse Memory Usage: 55844 KB
-Fuse CPU Usage: 827 ms
+Compiled 5 VHDL Units
+Built simulation executable C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline_tb_isim_beh.exe
+Fuse Memory Usage: 29704 KB
+Fuse CPU Usage: 500 ms

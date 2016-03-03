@@ -1,5 +1,67 @@
 INFO:sim:172 - Generating IP...
 Applying current project options...
 Finished applying current project options.
-Cancelled executing Tcl generator.
-Wrote CGP file for project 'blockram_16x4'.
+WARNING:sim - A core named 'blockram_14x16' already exists in the project.
+   Output products for this core may be overwritten.
+Resolving generics for 'blockram_14x16'...
+WARNING:sim - A core named 'blockram_14x16' already exists in the project.
+   Output products for this core may be overwritten.
+Applying external generics to 'blockram_14x16'...
+Delivering associated files for 'blockram_14x16'...
+Delivering EJava files for 'blockram_14x16'...
+Generating implementation netlist for 'blockram_14x16'...
+INFO:sim - Pre-processing HDL files for 'blockram_14x16'...
+Running synthesis for 'blockram_14x16'
+Running ngcbuild...
+Writing VEO instantiation template for 'blockram_14x16'...
+Writing Verilog behavioral simulation model for 'blockram_14x16'...
+WARNING:sim - Overwriting existing file C:/Users/OWner/Documents/CENG
+   450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16/doc/blk_me
+   m_gen_v7_3_vinfo.html with file from view xilinx_documentation
+Delivered 1 file into directory C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16
+Generating ASY schematic symbol...
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating SYM schematic symbol for 'blockram_14x16'...
+Generating metadata file...
+Regenerating ISE project file for 'blockram_14x16'...
+Generating ISE project...
+XCO file found: blockram_14x16.xco
+XMDF file found: blockram_14x16_xmdf.tcl
+Adding C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.asy -view all
+-origin_type imported
+Adding C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.ngc -view all
+-origin_type created
+Checking file "C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.ngc" for
+project device match ...
+File "C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.ngc" device
+information matches project device.
+Adding C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.sym -view all
+-origin_type imported
+Adding C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.v -view all
+-origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file "C:/Users/OWner/Documents/CENG
+   450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.v" into
+   library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding C:/Users/OWner/Documents/CENG
+450/lab/UvicSpring2016CENG450Lab/ipcore_dir/tmp/_cg/blockram_14x16.veo -view all
+-origin_type imported
+INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
+   Please set the new top explicitly by running the "project set top" command.
+   To re-calculate the new top automatically, set the "Auto Implementation Top"
+   property to true.
+Top level has been set to "/blockram_14x16"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
+Wrote CGP file for project 'blockram_14x16'.

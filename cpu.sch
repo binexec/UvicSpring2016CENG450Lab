@@ -25,29 +25,32 @@
         <signal name="XLXN_340" />
         <signal name="XLXN_341(15:0)" />
         <signal name="XLXN_342(15:0)" />
-        <signal name="XLXN_347(15:0)" />
-        <signal name="XLXN_348(15:0)" />
+        <signal name="MEMDATA(15:0)" />
+        <signal name="MEMADDR(15:0)" />
         <signal name="XLXN_349" />
-        <signal name="XLXN_362" />
-        <signal name="XLXN_367(15:0)" />
+        <signal name="MEMOUT(15:0)" />
         <signal name="XLXN_368(15:0)" />
         <signal name="XLXN_372" />
-        <signal name="XLXN_373(15:0)" />
         <signal name="XLXN_206(15:0)" />
         <signal name="ADDR(6:0)" />
         <signal name="CLK" />
         <signal name="RST" />
         <signal name="EXT_IN(15:0)" />
-        <signal name="XLXN_379" />
-        <signal name="XLXN_382(15:0)" />
+        <signal name="WBDATA(15:0)" />
+        <signal name="MEMWE" />
         <port polarity="Output" name="Z_FLAG" />
         <port polarity="Output" name="N_FLAG" />
         <port polarity="Output" name="OUTPUT(15:0)" />
         <port polarity="Output" name="ALU_RESULT(15:0)" />
+        <port polarity="Output" name="MEMDATA(15:0)" />
+        <port polarity="Output" name="MEMADDR(15:0)" />
+        <port polarity="Output" name="MEMOUT(15:0)" />
         <port polarity="Input" name="ADDR(6:0)" />
         <port polarity="Input" name="CLK" />
         <port polarity="Input" name="RST" />
         <port polarity="Input" name="EXT_IN(15:0)" />
+        <port polarity="Output" name="WBDATA(15:0)" />
+        <port polarity="Output" name="MEMWE" />
         <blockdef name="ALU">
             <timestamp>2016-2-22T5:50:34</timestamp>
             <rect width="288" x="64" y="-320" height="320" />
@@ -204,7 +207,7 @@
             <blockpin signalname="XLXN_206(15:0)" name="INSTR(15:0)" />
             <blockpin signalname="XLXN_8" name="RegWriteEn" />
             <blockpin signalname="XLXN_349" name="Reg1ToMemAddr" />
-            <blockpin signalname="XLXN_362" name="MemWE" />
+            <blockpin signalname="MEMWE" name="MemWE" />
             <blockpin signalname="XLXN_23(2:0)" name="RegRead1(2:0)" />
             <blockpin signalname="XLXN_24(2:0)" name="RegRead2(2:0)" />
             <blockpin signalname="XLXN_48(2:0)" name="RegWrite(2:0)" />
@@ -219,7 +222,7 @@
             <blockpin signalname="XLXN_23(2:0)" name="rd_index1(2:0)" />
             <blockpin signalname="XLXN_24(2:0)" name="rd_index2(2:0)" />
             <blockpin signalname="XLXN_48(2:0)" name="wr_index(2:0)" />
-            <blockpin signalname="XLXN_382(15:0)" name="wr_data(15:0)" />
+            <blockpin signalname="WBDATA(15:0)" name="wr_data(15:0)" />
             <blockpin signalname="XLXN_97(15:0)" name="rd_data2(15:0)" />
             <blockpin signalname="XLXN_340" name="rst" />
             <blockpin signalname="XLXN_316" name="clk" />
@@ -236,7 +239,7 @@
             <blockpin signalname="XLXN_349" name="sel" />
             <blockpin signalname="XLXN_341(15:0)" name="demux_in(15:0)" />
             <blockpin signalname="XLXN_342(15:0)" name="out1(15:0)" />
-            <blockpin signalname="XLXN_348(15:0)" name="out2(15:0)" />
+            <blockpin signalname="MEMADDR(15:0)" name="out2(15:0)" />
         </block>
         <block symbolname="ALU" name="XLXI_1">
             <blockpin signalname="XLXN_316" name="clk" />
@@ -252,21 +255,21 @@
             <blockpin signalname="ALU_RESULT(15:0)" name="muxin(15:0)" />
             <blockpin signalname="XLXN_264(1:0)" name="sel(1:0)" />
             <blockpin signalname="XLXN_368(15:0)" name="muxout1(15:0)" />
-            <blockpin signalname="XLXN_347(15:0)" name="muxout2(15:0)" />
+            <blockpin signalname="MEMDATA(15:0)" name="muxout2(15:0)" />
             <blockpin signalname="OUTPUT(15:0)" name="muxout3(15:0)" />
         </block>
         <block symbolname="ram_14x16" name="XLXI_49">
             <blockpin signalname="XLXN_316" name="CLK" />
-            <blockpin signalname="XLXN_362" name="WE" />
-            <blockpin signalname="XLXN_348(15:0)" name="ADDR(15:0)" />
-            <blockpin signalname="XLXN_367(15:0)" name="D_OUT(15:0)" />
-            <blockpin signalname="XLXN_347(15:0)" name="D_IN(15:0)" />
+            <blockpin signalname="MEMWE" name="WE" />
+            <blockpin signalname="MEMADDR(15:0)" name="ADDR(15:0)" />
+            <blockpin signalname="MEMOUT(15:0)" name="D_OUT(15:0)" />
+            <blockpin signalname="MEMDATA(15:0)" name="D_IN(15:0)" />
         </block>
         <block symbolname="mux_2to1_16bit" name="XLXI_50">
             <blockpin signalname="XLXN_372" name="sel" />
-            <blockpin signalname="XLXN_367(15:0)" name="in1(15:0)" />
+            <blockpin signalname="MEMOUT(15:0)" name="in1(15:0)" />
             <blockpin signalname="XLXN_368(15:0)" name="in2(15:0)" />
-            <blockpin signalname="XLXN_382(15:0)" name="muxout(15:0)" />
+            <blockpin signalname="WBDATA(15:0)" name="muxout(15:0)" />
         </block>
         <block symbolname="ROM_VHDL" name="XLXI_45">
             <blockpin signalname="XLXN_316" name="clk" />
@@ -359,11 +362,6 @@
         <branch name="XLXN_341(15:0)">
             <wire x2="2416" y1="1056" y2="1056" x1="2352" />
         </branch>
-        <branch name="XLXN_348(15:0)">
-            <wire x2="3968" y1="1056" y2="1056" x1="2832" />
-            <wire x2="3968" y1="1056" y2="1344" x1="3968" />
-            <wire x2="4320" y1="1344" y2="1344" x1="3968" />
-        </branch>
         <branch name="XLXN_349">
             <wire x2="1712" y1="1552" y2="1552" x1="1616" />
             <wire x2="1712" y1="992" y2="1552" x1="1712" />
@@ -381,13 +379,6 @@
         </instance>
         <instance x="2416" y="1088" name="XLXI_48" orien="R0">
         </instance>
-        <branch name="XLXN_362">
-            <wire x2="1680" y1="1616" y2="1616" x1="1616" />
-            <wire x2="1680" y1="848" y2="1616" x1="1680" />
-            <wire x2="4240" y1="848" y2="848" x1="1680" />
-            <wire x2="4240" y1="848" y2="1248" x1="4240" />
-            <wire x2="4320" y1="1248" y2="1248" x1="4240" />
-        </branch>
         <branch name="XLXN_103(15:0)">
             <wire x2="2800" y1="1408" y2="1408" x1="2784" />
             <wire x2="2800" y1="1312" y2="1408" x1="2800" />
@@ -400,16 +391,23 @@
         </branch>
         <instance x="2992" y="1408" name="XLXI_1" orien="R0">
         </instance>
-        <branch name="XLXN_347(15:0)">
-            <wire x2="4320" y1="1440" y2="1440" x1="3888" />
+        <branch name="MEMDATA(15:0)">
+            <wire x2="4096" y1="1440" y2="1440" x1="3888" />
+            <wire x2="4320" y1="1440" y2="1440" x1="4096" />
+            <wire x2="4032" y1="752" y2="1088" x1="4032" />
+            <wire x2="4096" y1="1088" y2="1088" x1="4032" />
+            <wire x2="4096" y1="1088" y2="1440" x1="4096" />
         </branch>
-        <branch name="XLXN_367(15:0)">
-            <wire x2="4848" y1="1168" y2="1168" x1="4704" />
+        <branch name="MEMOUT(15:0)">
+            <wire x2="4800" y1="1168" y2="1168" x1="4704" />
+            <wire x2="4848" y1="1168" y2="1168" x1="4800" />
+            <wire x2="4800" y1="608" y2="608" x1="4768" />
+            <wire x2="4800" y1="608" y2="1168" x1="4800" />
         </branch>
         <branch name="XLXN_368(15:0)">
-            <wire x2="3920" y1="1376" y2="1376" x1="3888" />
-            <wire x2="3920" y1="1376" y2="1600" x1="3920" />
-            <wire x2="4768" y1="1600" y2="1600" x1="3920" />
+            <wire x2="3936" y1="1376" y2="1376" x1="3888" />
+            <wire x2="3936" y1="1376" y2="1600" x1="3936" />
+            <wire x2="4768" y1="1600" y2="1600" x1="3936" />
             <wire x2="4768" y1="1232" y2="1600" x1="4768" />
             <wire x2="4848" y1="1232" y2="1232" x1="4768" />
         </branch>
@@ -477,12 +475,39 @@
             <wire x2="2960" y1="784" y2="1184" x1="2960" />
             <wire x2="2992" y1="1184" y2="1184" x1="2960" />
         </branch>
-        <branch name="XLXN_382(15:0)">
+        <branch name="WBDATA(15:0)">
             <wire x2="1904" y1="1408" y2="1408" x1="1840" />
             <wire x2="1840" y1="1408" y2="1888" x1="1840" />
             <wire x2="5296" y1="1888" y2="1888" x1="1840" />
             <wire x2="5296" y1="1104" y2="1104" x1="5232" />
             <wire x2="5296" y1="1104" y2="1888" x1="5296" />
+            <wire x2="5296" y1="608" y2="608" x1="5264" />
+            <wire x2="5296" y1="608" y2="1104" x1="5296" />
         </branch>
+        <branch name="MEMADDR(15:0)">
+            <wire x2="3968" y1="1056" y2="1056" x1="2832" />
+            <wire x2="3968" y1="1056" y2="1344" x1="3968" />
+            <wire x2="4160" y1="1344" y2="1344" x1="3968" />
+            <wire x2="4320" y1="1344" y2="1344" x1="4160" />
+            <wire x2="4160" y1="1040" y2="1344" x1="4160" />
+            <wire x2="4464" y1="1040" y2="1040" x1="4160" />
+            <wire x2="4464" y1="560" y2="560" x1="4384" />
+            <wire x2="4464" y1="560" y2="1040" x1="4464" />
+        </branch>
+        <iomarker fontsize="28" x="4384" y="560" name="MEMADDR(15:0)" orien="R180" />
+        <iomarker fontsize="28" x="4032" y="752" name="MEMDATA(15:0)" orien="R270" />
+        <iomarker fontsize="28" x="4768" y="608" name="MEMOUT(15:0)" orien="R180" />
+        <iomarker fontsize="28" x="5264" y="608" name="WBDATA(15:0)" orien="R180" />
+        <branch name="MEMWE">
+            <wire x2="1680" y1="1616" y2="1616" x1="1616" />
+            <wire x2="1680" y1="848" y2="1616" x1="1680" />
+            <wire x2="3920" y1="848" y2="848" x1="1680" />
+            <wire x2="4240" y1="848" y2="848" x1="3920" />
+            <wire x2="4240" y1="848" y2="1248" x1="4240" />
+            <wire x2="4320" y1="1248" y2="1248" x1="4240" />
+            <wire x2="3936" y1="480" y2="480" x1="3920" />
+            <wire x2="3920" y1="480" y2="848" x1="3920" />
+        </branch>
+        <iomarker fontsize="28" x="3936" y="480" name="MEMWE" orien="R0" />
     </sheet>
 </drawing>

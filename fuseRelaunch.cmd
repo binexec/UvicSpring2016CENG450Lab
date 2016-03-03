@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb_isim_beh.exe" -prj "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb_beh.prj" "work.cpu_tb" "work.glbl" 
+-intstyle "ise" -incremental -o "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline_tb_isim_beh.exe" -prj "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline_tb_beh.prj" "work.DE_EX_pipeline_tb" 

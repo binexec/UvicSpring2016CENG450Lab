@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : cpu.vf
-// /___/   /\     Timestamp : 02/28/2016 21:11:59
+// /___/   /\     Timestamp : 03/01/2016 17:10:31
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -120,8 +120,13 @@ module cpu(ADDR,
            EXT_IN, 
            RST, 
            ALU_RESULT, 
+           MEMADDR, 
+           MEMDATA, 
+           MEMOUT, 
+           MEMWE, 
            N_FLAG, 
            OUTPUT, 
+           WBDATA, 
            Z_FLAG);
 
     input [6:0] ADDR;
@@ -129,8 +134,13 @@ module cpu(ADDR,
     input [15:0] EXT_IN;
     input RST;
    output [15:0] ALU_RESULT;
+   output [15:0] MEMADDR;
+   output [15:0] MEMDATA;
+   output [15:0] MEMOUT;
+   output MEMWE;
    output N_FLAG;
    output [15:0] OUTPUT;
+   output [15:0] WBDATA;
    output Z_FLAG;
    
    wire XLXN_8;
@@ -149,17 +159,22 @@ module cpu(ADDR,
    wire XLXN_340;
    wire [15:0] XLXN_341;
    wire [15:0] XLXN_342;
-   wire [15:0] XLXN_347;
-   wire [15:0] XLXN_348;
    wire XLXN_349;
-   wire XLXN_362;
-   wire [15:0] XLXN_367;
    wire [15:0] XLXN_368;
    wire XLXN_372;
-   wire [15:0] XLXN_382;
+   wire [15:0] MEMOUT_DUMMY;
    wire [15:0] ALU_RESULT_DUMMY;
+   wire MEMWE_DUMMY;
+   wire [15:0] WBDATA_DUMMY;
+   wire [15:0] MEMADDR_DUMMY;
+   wire [15:0] MEMDATA_DUMMY;
    
    assign ALU_RESULT[15:0] = ALU_RESULT_DUMMY[15:0];
+   assign MEMADDR[15:0] = MEMADDR_DUMMY[15:0];
+   assign MEMDATA[15:0] = MEMDATA_DUMMY[15:0];
+   assign MEMOUT[15:0] = MEMOUT_DUMMY[15:0];
+   assign MEMWE = MEMWE_DUMMY;
+   assign WBDATA[15:0] = WBDATA_DUMMY[15:0];
    ALU  XLXI_1 (.alu_mode(XLXN_49[2:0]), 
                .clk(XLXN_316), 
                .in1(XLXN_342[15:0]), 
@@ -172,7 +187,7 @@ module cpu(ADDR,
                          .rd_index1(XLXN_23[2:0]), 
                          .rd_index2(XLXN_24[2:0]), 
                          .rst(XLXN_340), 
-                         .wr_data(XLXN_382[15:0]), 
+                         .wr_data(WBDATA_DUMMY[15:0]), 
                          .wr_enable(XLXN_8), 
                          .wr_index(XLXN_48[2:0]), 
                          .rd_data1(XLXN_341[15:0]), 
@@ -184,7 +199,7 @@ module cpu(ADDR,
                    .ALUMode(XLXN_49[2:0]), 
                    .ALU_Dest(XLXN_264[1:0]), 
                    .ImmData(XLXN_13[15:0]), 
-                   .MemWE(XLXN_362), 
+                   .MemWE(MEMWE_DUMMY), 
                    .RegRead1(XLXN_23[2:0]), 
                    .RegRead2(XLXN_24[2:0]), 
                    .RegWrite(XLXN_48[2:0]), 
@@ -213,19 +228,19 @@ module cpu(ADDR,
    demux_3to1_16bit  XLXI_46 (.muxin(ALU_RESULT_DUMMY[15:0]), 
                              .sel(XLXN_264[1:0]), 
                              .muxout1(XLXN_368[15:0]), 
-                             .muxout2(XLXN_347[15:0]), 
+                             .muxout2(MEMDATA_DUMMY[15:0]), 
                              .muxout3(OUTPUT[15:0]));
    demux_1to2_16bit  XLXI_48 (.demux_in(XLXN_341[15:0]), 
                              .sel(XLXN_349), 
                              .out1(XLXN_342[15:0]), 
-                             .out2(XLXN_348[15:0]));
-   ram_14x16_MUSER_cpu  XLXI_49 (.ADDR(XLXN_348[15:0]), 
+                             .out2(MEMADDR_DUMMY[15:0]));
+   ram_14x16_MUSER_cpu  XLXI_49 (.ADDR(MEMADDR_DUMMY[15:0]), 
                                 .CLK(XLXN_316), 
-                                .D_IN(XLXN_347[15:0]), 
-                                .WE(XLXN_362), 
-                                .D_OUT(XLXN_367[15:0]));
-   mux_2to1_16bit  XLXI_50 (.in1(XLXN_367[15:0]), 
+                                .D_IN(MEMDATA_DUMMY[15:0]), 
+                                .WE(MEMWE_DUMMY), 
+                                .D_OUT(MEMOUT_DUMMY[15:0]));
+   mux_2to1_16bit  XLXI_50 (.in1(MEMOUT_DUMMY[15:0]), 
                            .in2(XLXN_368[15:0]), 
                            .sel(XLXN_372), 
-                           .muxout(XLXN_382[15:0]));
+                           .muxout(WBDATA_DUMMY[15:0]));
 endmodule

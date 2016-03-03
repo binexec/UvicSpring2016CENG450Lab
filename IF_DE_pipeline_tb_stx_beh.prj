@@ -1,0 +1,2 @@
+vhdl isim_temp "IF_DE_pipeline.vhd"
+vhdl isim_temp "IF_DE_pipeline_tb.vhd"

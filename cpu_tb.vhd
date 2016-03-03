@@ -18,7 +18,13 @@ ARCHITECTURE behavioral OF cpu_tb IS
           --INSTR	:	IN	STD_LOGIC_VECTOR (15 DOWNTO 0); 
           OUTPUT	:	OUT	STD_LOGIC_VECTOR (15 DOWNTO 0);
 			 EXT_IN	:	IN	STD_LOGIC_VECTOR (15 DOWNTO 0);
-			 addr     : in  std_logic_vector (6 downto 0)
+			 addr     : in  std_logic_vector (6 downto 0);
+			 
+			 MEMDATA :	OUT	STD_LOGIC_VECTOR (15 DOWNTO 0);
+			 MEMADDR : OUT	STD_LOGIC_VECTOR (15 DOWNTO 0);
+			 MEMOUT :	out	STD_LOGIC_VECTOR (15 DOWNTO 0);
+			 WBDATA :	out	STD_LOGIC_VECTOR (15 DOWNTO 0);
+			 MEMWE	: out	STD_LOGIC
 
 			 );
    END COMPONENT;
@@ -31,6 +37,12 @@ ARCHITECTURE behavioral OF cpu_tb IS
    SIGNAL OUTPUT	:	STD_LOGIC_VECTOR (15 DOWNTO 0);
 	SIGNAL EXT_IN	: STD_LOGIC_VECTOR (15 DOWNTO 0); 
 	signal addr : std_logic_vector (6 downto 0);
+	
+	SIGNAL MEMDATA :	STD_LOGIC_VECTOR (15 DOWNTO 0);
+	SIGNAL MEMADDR : STD_LOGIC_VECTOR (15 DOWNTO 0);
+   SIGNAL MEMOUT : STD_LOGIC_VECTOR (15 DOWNTO 0);
+	SIGNAL WBDATA : STD_LOGIC_VECTOR (15 DOWNTO 0);
+	signal MEMWE	: STD_LOGIC;
 	
 	-- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -45,7 +57,12 @@ BEGIN
 		--INSTR => INSTR, 
 		OUTPUT => OUTPUT,
 		EXT_IN => EXT_IN,
-		addr => addr
+		addr => addr,
+		MEMDATA => MEMDATA,
+		MEMADDR => MEMADDR,
+		MEMOUT => MEMOUT,
+		WBDATA => WBDATA,
+		MEMWE => MEMWE
    );
 	
 	-- Clock process definitions
@@ -88,71 +105,18 @@ BEGIN
 		end loop;
 		
 		--in r4
-		EXT_IN <= X"1234";
+		EXT_IN <= X"0034";
 		ADDR <= std_logic_vector(to_unsigned(26,7));
 		wait for clk_period;	
 		EXT_IN <= X"0000";
 		
-		for I in 27 to 31 loop
+		for I in 27 to 127 loop
 			ADDR <= std_logic_vector(to_unsigned(I,7));
 			wait for clk_period;
 		end loop;
 		
-		
-		
-		
---		--IN R0
---		EXT_IN <= X"0000";
---		INSTR <= "0100001000000000";
---		wait for clk_period;	
---		
---		--IN R1
---		EXT_IN <= X"038E";
---		INSTR <= "0100001001000000";
---		wait for clk_period;	
---		
---		--IN R2
---		EXT_IN <= X"0282";
---		INSTR <= "0100001010000000";
---		wait for clk_period;	
---		EXT_IN <= X"0000";
---		
---		--TEST R0
---		INSTR <= "0000111000000000";
---		wait for clk_period;	
---		
---		--TEST R1
---		INSTR <= "0000111001000000";
---		wait for clk_period;	
---		
---		--TEST R2
---		INSTR <= "0000111010000000";
---		wait for clk_period;	
---		
---		--ADD R0 R1 R2
---		INSTR <= "0000001000001010";
---		wait for clk_period;	
---		
---		--SUB R0 R0 R7
---		INSTR <= "0000010000000111";
---		wait for clk_period;	
---		
---		--MUL R7 R5 R6
---		INSTR <= "0000011111101011";
---		wait for clk_period;	
---		
---		--SHL R0 5
---      INSTR <= "0000101000000101";
---		wait for clk_period;	
---		
---		--SHR R0 7
---      INSTR <= "0000110000000111";
---		wait for clk_period;	
---		
---		--NOP
---      INSTR <= X"0000";
---		wait for clk_period;	
-	
+
+
       WAIT; -- will wait forever
    END PROCESS;
 -- *** End Test Bench - User Defined Section ***

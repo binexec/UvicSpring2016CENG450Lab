@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.xst" -ofn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.xst" -ofn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.xst" -ofn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.xst" -ofn "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.syr" 
+vhdtdtfi -lib work IF_DE_pipeline.vhd -prj lab2 -o IF_DE_pipeline.spl -module IF_DE_pipeline -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e IF_DE_pipeline.spl {C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.sym} 
+vhdtdtfi -lib work IF_DE_pipeline.vhd -prj lab2 -o IF_DE_pipeline.spl -module IF_DE_pipeline -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e IF_DE_pipeline.spl {C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/IF_DE_pipeline.sym} 

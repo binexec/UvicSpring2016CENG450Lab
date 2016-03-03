@@ -7,11 +7,11 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : ram_16x16.vf
-// /___/   /\     Timestamp : 02/25/2016 21:22:05
+// /___/   /\     Timestamp : 02/28/2016 22:56:47
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -sympath "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ipcore_dir" -intstyle ise -family spartan3e -verilog "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16.vf" -w "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16.sch"
+//Command: sch2hdl -sympath "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ipcore_dir" -intstyle ise -family spartan3e -verilog "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ram_16x16.vf" -w "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ram_16x16.sch"
 //Design Name: ram_16x16
 //Device: spartan3e
 //Purpose:

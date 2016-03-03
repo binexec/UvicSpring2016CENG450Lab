@@ -1,0 +1,2 @@
+vhdtdtfi -lib work DE_EX_pipeline.vhd -prj lab2 -o DE_EX_pipeline.spl -module DE_EX_pipeline -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e DE_EX_pipeline.spl {C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/DE_EX_pipeline.sym} 

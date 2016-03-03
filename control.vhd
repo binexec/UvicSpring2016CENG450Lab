@@ -160,9 +160,9 @@ begin
 			when "0000101" => ALUMode <= "111";
 			--SHR
 			when "0000110" => ALUMode <= "110";
-			--IN uses IN2 Passthrough
-			when "0100001" => ALUMode <= "001";
-			--NOP, TEST, OUT use IN1 Passthrough
+			--IN, STORE uses IN2 Passthrough
+			when "0100001" | "0010001" => ALUMode <= "001";
+			--NOP, TEST, OUT, MOV use IN1 Passthrough
 			when others  => ALUMode <= "000";
 		end case;
 	end process;
@@ -172,10 +172,10 @@ begin
 	process(INSTR, OPCODE)
 	begin
 		case OPCODE is
-			--OPCODE 32 goes to output
+			--OPCODE 32 (OUT) goes to output
 			when  "0100000"  =>  ALU_DEST <= "10";
-			--OPCODE 16,17 goes to memory's data in
-			when  "0010000" | "0010001" =>  ALU_DEST <= "01";	
+			--OPCODE 17 (STORE) goes to memory's data in
+			when  "0010001" =>  ALU_DEST <= "01";	
 			--All others will route the data back into register file's write port
 			when others => ALU_DEST <= "00";
 		end case; 

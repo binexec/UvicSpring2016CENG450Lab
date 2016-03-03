@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/xst"
+elaborate
+-ifn IF_DE_pipeline.prj
+-ifmt mixed
