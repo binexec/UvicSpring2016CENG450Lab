@@ -7,12 +7,15 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
-         <ClosedNode>/cpu C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|cpu.sch</ClosedNode>
+         <ClosedNode>/cpu C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|cpu.sch/XLXI_49 - ram_14x16</ClosedNode>
+         <ClosedNode>/cpu_pipelined C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|cpu_pipelined.sch</ClosedNode>
          <ClosedNode>/cpu_pipelined C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|cpu_pipelined.sch/XLXI_49 - ram_14x16</ClosedNode>
          <ClosedNode>/ram_16x16 C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab-|ram_16x16.sch</ClosedNode>
          <ClosedNode>/ram_16x16 C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|ram_16x16.sch</ClosedNode>
       </ClosedNodes>
-      <SelectedItems/>
+      <SelectedItems>
+         <SelectedItem>cpu_pipelined (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_pipelined.sch)</SelectedItem>
+      </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ad000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ad0000000100000003000000000000000100000003</ViewHeaderState>
@@ -75,11 +78,11 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/DE_EX_pipeline_tb - behavior C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|DE_EX_pipeline_tb.vhd</ClosedNode>
          <ClosedNode>/IF_DE_pipeline_tb - behavior C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|IF_DE_pipeline_tb.vhd</ClosedNode>
          <ClosedNode>/alu_test - behavior C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|alu_test.vhd</ClosedNode>
          <ClosedNode>/control_tb - behavior C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|control_tb.vhd</ClosedNode>
          <ClosedNode>/cpu_pipelined_tb - behavioral C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|cpu_pipelined_tb.vhd/UUT - cpu_pipelined/XLXI_49 - ram_14x16</ClosedNode>
-         <ClosedNode>/cpu_tb - behavioral C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|cpu_tb.vhd</ClosedNode>
          <ClosedNode>/cpu_tb - behavioral C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|cpu_tb.vhd/UUT - cpu</ClosedNode>
          <ClosedNode>/ram_14x16_ram_14x16_sch_tb - behavioral C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|ram_14x16_tb.vhd</ClosedNode>
          <ClosedNode>/ram_16x16_ram_16x16_sch_tb - behavioral C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|ram_16x16_tb.vhd</ClosedNode>
@@ -87,13 +90,13 @@
          <ClosedNode>/register_test - behavioural C:|Users|nelsonda|lab2|register_test.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>cpu_pipelined_tb - behavioral (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_pipelined_tb.vhd)</SelectedItem>
+         <SelectedItem>cpu_tb - behavioral (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001c1000000020000000000000000000000000200000064ffffffff000000810000000300000002000001c10000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>cpu_pipelined_tb - behavioral (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_pipelined_tb.vhd)</CurrentItem>
+      <CurrentItem>cpu_tb - behavioral (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -123,7 +126,7 @@
       <CurrentItem></CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>

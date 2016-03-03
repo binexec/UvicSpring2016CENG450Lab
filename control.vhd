@@ -55,6 +55,34 @@ architecture Behavioral of control is
 	signal m1 :  STD_LOGIC;
 	signal imm :  STD_LOGIC_VECTOR (7 downto 0);
 	
+	
+	--A Format instructions
+	constant OPCODE_ADD : std_logic_vector (6 downto 0) := "0000001";
+	constant OPCODE_SUB : std_logic_vector (6 downto 0) := "0000010";
+	constant OPCODE_MUL : std_logic_vector (6 downto 0) := "0000011";
+	constant OPCODE_NAND : std_logic_vector (6 downto 0) := "0000100";
+	constant OPCODE_SHL : std_logic_vector (6 downto 0) := "0000101";
+	constant OPCODE_SHR : std_logic_vector (6 downto 0) := "0000110";
+	constant OPCODE_TEST : std_logic_vector (6 downto 0) := "0000111";
+	constant OPCODE_OUT : std_logic_vector (6 downto 0) := "0100000";
+	constant OPCODE_IN  : std_logic_vector (6 downto 0) := "0100001";
+	
+	--Format B Instructioms
+	constant OPCODE_BRR : std_logic_vector (6 downto 0) := "1000000";
+	constant OPCODE_BRRN : std_logic_vector (6 downto 0) := "1000010";
+	constant OPCODE_BRRZ : std_logic_vector (6 downto 0) := "1000011";
+	constant OPCODE_BR : std_logic_vector (6 downto 0) := "1000011";
+	constant OPCODE_BRN : std_logic_vector (6 downto 0) := "1000100";
+	constant OPCODE_BRZ : std_logic_vector (6 downto 0) := "1000101";
+	constant OPCODE_BRSUB : std_logic_vector (6 downto 0) := "1000110";
+	constant OPCODE_RETURN : std_logic_vector (6 downto 0) := "1000111";
+	
+	--Format L Instructions
+	constant OPCODE_LOAD :  std_logic_vector(6 downto 0):= "0010000";
+	constant OPCODE_STORE :  std_logic_vector(6 downto 0):= "0010001";
+	constant OPCODE_LOADIMM :  std_logic_vector(6 downto 0):= "0010010";
+	constant OPCODE_MOV :  std_logic_vector(6 downto 0):= "0010011";
+	
 begin
 
 	--Break up the entire instruction into potential fields 
@@ -73,13 +101,13 @@ begin
 	begin
 		case OPCODE is
 		--OPCODE 1,2,3,4 (Format-A)
-		when "0000001" | "0000010" | "0000011" | "0000100" => RegRead1 <= rb;
+		when OPCODE_ADD | OPCODE_SUB | OPCODE_MUL | OPCODE_NAND => RegRead1 <= rb;
 		--OPCODE 5,6,7,32 (Format-A)
-		when "0000101" | "0000110" | "0000111" | "0100000" => RegRead1 <= ra;
+		when OPCODE_SHL | OPCODE_SHR | OPCODE_TEST | OPCODE_OUT => RegRead1 <= ra;
 		--OPCODE 16, 19 uses RB/R.SRC (as memory address for LOAD, source register for MOV) (Format-L)
-		when "0010000" | "0010011" => RegRead1 <= rb;
+		when OPCODE_LOAD | OPCODE_MOV => RegRead1 <= rb;
 		--OPCODE 17 uses RA/R.DEST as memory address for STORE(Format-L)
-		when "0010001" => RegRead1 <= ra;
+		when OPCODE_STORE => RegRead1 <= ra;
 		when others => RegRead1 <= "000";
 		
 		end case; 
@@ -90,9 +118,9 @@ begin
 	begin
 		case OPCODE is
 			--Opcodes 1,2,3,4 (format As)
-			when "0000001" | "0000010" | "0000011" | "0000100" => RegRead2 <= rc;
+			when OPCODE_ADD | OPCODE_SUB | OPCODE_MUL | OPCODE_NAND => RegRead2 <= rc;
 			--OPCODE 17 uses RB/R.SRC to send data to memory (Format-L)
-			when "0010001"  => RegRead2 <= rb;
+			when OPCODE_STORE  => RegRead2 <= rb;
 			when others => RegRead2 <= "000";
 		end case;
 	end process;
@@ -102,9 +130,9 @@ begin
 	begin
 		case OPCODE is
 			--Opcodes 1,2,3,4,5,6,33 (format As)
-			when  "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => RegWrite <= ra;
+			when  OPCODE_ADD | OPCODE_SUB | OPCODE_MUL | OPCODE_NAND | OPCODE_SHL | OPCODE_SHR | OPCODE_IN => RegWrite <= ra;
 			--OPCODE 16, 19 uses RA/R.DEST (Format-L)
-			when "0010000" | "0010011" => RegWrite <= ra;
+			when OPCODE_LOAD | OPCODE_MOV => RegWrite <= ra;
 			when others => RegWrite <= "000";
 		end case;
 	end process;
@@ -115,9 +143,9 @@ begin
 	begin
 		case OPCODE is
 			--Opcodes 1,2,3,4,5,6,33 (format As)
-			when "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => RegWriteEn <= '1';
+			when OPCODE_ADD | OPCODE_SUB | OPCODE_MUL | OPCODE_NAND | OPCODE_SHL | OPCODE_SHR | OPCODE_IN => RegWriteEn <= '1';
 			--OPCODE 16, 19(Format-L)
-			when "0010000" | "0010011" => RegWriteEn <= '1';
+			when OPCODE_LOAD | OPCODE_MOV => RegWriteEn <= '1';
 			when others => RegWriteEn <= '0';
 		end case;
 	end process;
@@ -127,7 +155,7 @@ begin
 	begin
 		case OPCODE is
 			--Opcodes 5,6 (format As) Zero extend c1 to 16 bits
-			when "0000101" | "0000110" => ImmData <= std_logic_vector(resize(unsigned(c1), 16));
+			when OPCODE_SHL | OPCODE_SHR => ImmData <= std_logic_vector(resize(unsigned(c1), 16));
 			when others => ImmData <= X"0000";
 		end case;
 	end process;
@@ -137,9 +165,9 @@ begin
 	begin
 		case OPCODE is 
 			--Use immediate data for Opcodes 5,6 (format As)
-			when "0000101" | "0000110" => ALUIN2Src <= "01";
+			when OPCODE_SHL | OPCODE_SHR => ALUIN2Src <= "01";
 			--Use external data for Opcodes 33 (format As)
-			when "0100001" => ALUIN2Src <= "10";
+			when OPCODE_IN => ALUIN2Src <= "10";
 			when others => ALUIN2Src <= "00";
 		end case;
 	end process;
@@ -148,20 +176,14 @@ begin
 	process(INSTR, OPCODE)
 	begin
 		case opcode is
-			--ADD
-			when "0000001" => ALUMode <= "011";
-			--SUB
-			when "0000010" => ALUMode <= "100";
-			--MUL
-			when "0000011" => ALUMode <= "010";
-			--NAND
-			when "0000100" => ALUMode <= "101";
-			--SHL
-			when "0000101" => ALUMode <= "111";
-			--SHR
-			when "0000110" => ALUMode <= "110";
+			when OPCODE_ADD => ALUMode <= "011";
+			when OPCODE_SUB => ALUMode <= "100";
+			when OPCODE_MUL => ALUMode <= "010";
+			when OPCODE_NAND => ALUMode <= "101";
+			when OPCODE_SHL => ALUMode <= "111";
+			when OPCODE_SHR => ALUMode <= "110";
 			--IN, STORE uses IN2 Passthrough
-			when "0100001" | "0010001" => ALUMode <= "001";
+			when OPCODE_IN | OPCODE_STORE => ALUMode <= "001";
 			--NOP, TEST, OUT, MOV use IN1 Passthrough
 			when others  => ALUMode <= "000";
 		end case;
@@ -173,9 +195,9 @@ begin
 	begin
 		case OPCODE is
 			--OPCODE 32 (OUT) goes to output
-			when  "0100000"  =>  ALU_DEST <= "10";
+			when  OPCODE_OUT  =>  ALU_DEST <= "10";
 			--OPCODE 17 (STORE) goes to memory's data in
-			when  "0010001" =>  ALU_DEST <= "01";	
+			when  OPCODE_STORE =>  ALU_DEST <= "01";	
 			--All others will route the data back into register file's write port
 			when others => ALU_DEST <= "00";
 		end case; 
@@ -186,7 +208,7 @@ begin
 	begin
 		case OPCODE is
 			--OPCODE 16, 17
-			when  "0010000" | "0010001" =>  Reg1ToMemAddr <= '1';
+			when  OPCODE_LOAD | OPCODE_STORE =>  Reg1ToMemAddr <= '1';
 			when others => Reg1ToMemAddr <= '0';
 		end case; 
 	end process;
@@ -196,7 +218,7 @@ begin
 	begin
 		case OPCODE is
 			--OPCODE 17 sets memory mode to WRITE
-			when "0010001" =>  MemWE <= '1';
+			when OPCODE_STORE =>  MemWE <= '1';
 			when others => MemWE <= '0';
 		end case; 
 	end process;
@@ -206,7 +228,7 @@ begin
 	begin
 		case OPCODE is
 			--OPCODE 16; use memory as register writeback source
-			when "0010000" =>  RegWriteSrc <= '0';
+			when OPCODE_LOAD =>  RegWriteSrc <= '0';
 			when others => RegWriteSrc <= '1';
 		end case; 
 	end process;
