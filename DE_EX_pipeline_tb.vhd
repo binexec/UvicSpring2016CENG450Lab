@@ -12,21 +12,23 @@ ARCHITECTURE behavior OF DE_EX_pipeline_tb IS
     PORT(
          clk : IN  std_logic;
          rst : IN  std_logic;
+			
          mux1out1_i : IN  std_logic_vector(15 downto 0);
          mux1out2_i : IN  std_logic_vector(15 downto 0);
          mux2out_i : IN  std_logic_vector(15 downto 0);
-         regwe_i : IN  std_logic;
-         regwrtaddr_i : IN  std_logic_vector(2 downto 0);
          alumode_i : IN  std_logic_vector(2 downto 0);
          aludest_i : IN  std_logic_vector(1 downto 0);
+			regwrtaddr_i : IN  std_logic_vector(2 downto 0);
+			regwe_i : IN  std_logic;
          memwe_i : IN  std_logic;
          regwrtsrc_i : IN  std_logic;
+			
          mux1out1 : OUT  std_logic_vector(15 downto 0);
          mux1out2 : OUT  std_logic_vector(15 downto 0);
          mux2out : OUT  std_logic_vector(15 downto 0);
          alumode : OUT  std_logic_vector(2 downto 0);
          aludest : OUT  std_logic_vector(1 downto 0);
-         regwrtaddr : OUT  std_logic_vector(2 downto 0);
+			regwrtaddr : OUT  std_logic_vector(2 downto 0);
          regwe : OUT  std_logic;
          memwe : OUT  std_logic;
          regwrtsrc : OUT  std_logic
@@ -39,11 +41,11 @@ ARCHITECTURE behavior OF DE_EX_pipeline_tb IS
    signal rst : std_logic := '0';
    signal mux1out1_i : std_logic_vector(15 downto 0) := (others => '0');
    signal mux1out2_i : std_logic_vector(15 downto 0) := (others => '0');
-   signal mux2out_i : std_logic_vector(15 downto 0) := (others => '0');
-   signal regwe_i : std_logic := '0';
-   signal regwrtaddr_i : std_logic_vector(2 downto 0) := (others => '0');
+   signal mux2out_i : std_logic_vector(15 downto 0) := (others => '0');   
    signal alumode_i : std_logic_vector(2 downto 0) := (others => '0');
    signal aludest_i : std_logic_vector(1 downto 0) := (others => '0');
+	signal regwrtaddr_i : std_logic_vector(2 downto 0) := (others => '0');
+	signal regwe_i : std_logic := '0';
    signal memwe_i : std_logic := '0';
    signal regwrtsrc_i : std_logic := '0';
 
@@ -70,12 +72,13 @@ BEGIN
           mux1out1_i => mux1out1_i,
           mux1out2_i => mux1out2_i,
           mux2out_i => mux2out_i,
-          regwe_i => regwe_i,
-          regwrtaddr_i => regwrtaddr_i,
           alumode_i => alumode_i,
           aludest_i => aludest_i,
+			 regwrtaddr_i => regwrtaddr_i,
+			 regwe_i => regwe_i,
           memwe_i => memwe_i,
           regwrtsrc_i => regwrtsrc_i,
+			 
           mux1out1 => mux1out1,
           mux1out2 => mux1out2,
           mux2out => mux2out,

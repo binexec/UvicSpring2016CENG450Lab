@@ -1,0 +1,28 @@
+Command line:
+   cpu_pipelined_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  16814
+
+Thu Mar 03 12:45:06 2016
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 849.474 Meg
+
+ Total Signals          : 369
+ Total Nets             : 2249
+ Total Signal Drivers   : 219
+ Total Blocks           : 56
+ Total Primitive Blocks : 49
+ Total Processes        : 244
+ Total Traceable Variables  : 465
+ Total Scalar Nets and Variables : 353680
+
+ Total Simulation Time: 0.109375 sec
+
+ Current Memory Usage: 849.474 Meg
+
+Thu Mar 03 12:45:20 2016
+

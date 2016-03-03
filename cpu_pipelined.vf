@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : cpu_pipelined.vf
-// /___/   /\     Timestamp : 03/01/2016 02:32:50
+// /___/   /\     Timestamp : 03/03/2016 12:26:25
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -119,9 +119,6 @@ module cpu_pipelined(ADDR,
                      CLK, 
                      EXT_IN, 
                      RST, 
-                     EXTIN_OUT, 
-                     instr_in, 
-                     instr_out, 
                      N_FLAG, 
                      OUTPUT, 
                      Z_FLAG);
@@ -130,78 +127,81 @@ module cpu_pipelined(ADDR,
     input CLK;
     input [15:0] EXT_IN;
     input RST;
-   output [15:0] EXTIN_OUT;
-   output [15:0] instr_in;
-   output [15:0] instr_out;
    output N_FLAG;
    output [15:0] OUTPUT;
    output Z_FLAG;
    
    wire [15:0] ALU_RESULT;
    wire [15:0] EXTIN;
-   wire [15:0] MEMADDR;
+   wire [15:0] EXTIN_OUT;
+   wire [15:0] instr_in;
+   wire [15:0] instr_out;
    wire [15:0] MEMDATA;
    wire [15:0] MEMOUT;
-   wire MEMWE;
-   wire [15:0] WBDATA;
    wire [15:0] XLXN_4;
-   wire XLXN_8;
    wire [2:0] XLXN_23;
    wire [2:0] XLXN_24;
-   wire [2:0] XLXN_48;
-   wire [2:0] XLXN_49;
    wire [15:0] XLXN_97;
-   wire [15:0] XLXN_103;
    wire [1:0] XLXN_104;
    wire XLXN_316;
    wire [15:0] XLXN_341;
-   wire [15:0] XLXN_342;
    wire [15:0] XLXN_368;
-   wire XLXN_372;
    wire XLXN_454;
-   wire [1:0] XLXN_455;
-   wire XLXN_477;
-   wire [15:0] instr_in_DUMMY;
-   wire [15:0] instr_out_DUMMY;
-   wire [15:0] EXTIN_OUT_DUMMY;
+   wire [15:0] XLXN_494;
+   wire [15:0] XLXN_495;
+   wire [15:0] XLXN_496;
+   wire XLXN_499;
+   wire [2:0] XLXN_500;
+   wire [1:0] XLXN_501;
+   wire XLXN_502;
+   wire XLXN_503;
+   wire XLXN_504;
+   wire [2:0] XLXN_506;
+   wire [15:0] XLXN_530;
+   wire [15:0] XLXN_531;
+   wire [2:0] XLXN_532;
+   wire [1:0] XLXN_533;
+   wire [15:0] XLXN_548;
+   wire XLXN_549;
+   wire XLXN_550;
+   wire [15:0] XLXN_551;
+   wire XLXN_552;
+   wire [2:0] XLXN_553;
    
-   assign EXTIN_OUT[15:0] = EXTIN_OUT_DUMMY[15:0];
-   assign instr_in[15:0] = instr_in_DUMMY[15:0];
-   assign instr_out[15:0] = instr_out_DUMMY[15:0];
-   ALU  XLXI_1 (.alu_mode(XLXN_49[2:0]), 
+   ALU  XLXI_1 (.alu_mode(XLXN_532[2:0]), 
                .clk(XLXN_316), 
-               .in1(XLXN_342[15:0]), 
-               .in2(XLXN_103[15:0]), 
-               .rst(XLXN_477), 
+               .in1(XLXN_530[15:0]), 
+               .in2(XLXN_531[15:0]), 
+               .rst(XLXN_499), 
                .n_flag(N_FLAG), 
                .result(ALU_RESULT[15:0]), 
                .z_flag(Z_FLAG));
    mux_3to1_16bit  XLXI_2 (.in1(XLXN_97[15:0]), 
                           .in2(XLXN_4[15:0]), 
-                          .in3(EXTIN_OUT_DUMMY[15:0]), 
+                          .in3(EXTIN_OUT[15:0]), 
                           .sel(XLXN_104[1:0]), 
-                          .muxout(XLXN_103[15:0]));
+                          .muxout(XLXN_496[15:0]));
    control  XLXI_3 (.CLK(XLXN_316), 
-                   .INSTR(instr_out_DUMMY[15:0]), 
-                   .RST(XLXN_477), 
+                   .INSTR(instr_out[15:0]), 
+                   .RST(XLXN_499), 
                    .ALUIN2Src(XLXN_104[1:0]), 
-                   .ALUMode(XLXN_49[2:0]), 
-                   .ALU_Dest(XLXN_455[1:0]), 
+                   .ALUMode(XLXN_500[2:0]), 
+                   .ALU_Dest(XLXN_501[1:0]), 
                    .ImmData(XLXN_4[15:0]), 
-                   .MemWE(MEMWE), 
+                   .MemWE(XLXN_502), 
                    .RegRead1(XLXN_23[2:0]), 
                    .RegRead2(XLXN_24[2:0]), 
-                   .RegWrite(XLXN_48[2:0]), 
-                   .RegWriteEn(XLXN_8), 
-                   .RegWriteSrc(XLXN_372), 
+                   .RegWrite(XLXN_506[2:0]), 
+                   .RegWriteEn(XLXN_504), 
+                   .RegWriteSrc(XLXN_503), 
                    .Reg1ToMemAddr(XLXN_454));
    register_file  XLXI_11 (.clk(XLXN_316), 
                           .rd_index1(XLXN_23[2:0]), 
                           .rd_index2(XLXN_24[2:0]), 
-                          .rst(XLXN_477), 
-                          .wr_data(WBDATA[15:0]), 
-                          .wr_enable(XLXN_8), 
-                          .wr_index(XLXN_48[2:0]), 
+                          .rst(XLXN_499), 
+                          .wr_data(XLXN_551[15:0]), 
+                          .wr_enable(XLXN_552), 
+                          .wr_index(XLXN_553[2:0]), 
                           .rd_data1(XLXN_341[15:0]), 
                           .rd_data2(XLXN_97[15:0]));
    (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
@@ -211,35 +211,55 @@ module cpu_pipelined(ADDR,
    (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
          IFD_DELAY_VALUE = "AUTO" *) 
    IBUF  XLXI_30 (.I(RST), 
-                 .O(XLXN_477));
+                 .O(XLXN_499));
    (* HU_SET = "XLXI_42_0" *) 
    IBUF16_MXILINX_cpu_pipelined  XLXI_42 (.I(EXT_IN[15:0]), 
                                          .O(EXTIN[15:0]));
    ROM_VHDL  XLXI_45 (.addr(ADDR[6:0]), 
                      .clk(XLXN_316), 
-                     .data(instr_in_DUMMY[15:0]));
+                     .data(instr_in[15:0]));
    demux_3to1_16bit  XLXI_46 (.muxin(ALU_RESULT[15:0]), 
-                             .sel(XLXN_455[1:0]), 
+                             .sel(XLXN_533[1:0]), 
                              .muxout1(XLXN_368[15:0]), 
                              .muxout2(MEMDATA[15:0]), 
                              .muxout3(OUTPUT[15:0]));
    demux_1to2_16bit  XLXI_48 (.demux_in(XLXN_341[15:0]), 
                              .sel(XLXN_454), 
-                             .out1(XLXN_342[15:0]), 
-                             .out2(MEMADDR[15:0]));
-   ram_14x16_MUSER_cpu_pipelined  XLXI_49 (.ADDR(MEMADDR[15:0]), 
+                             .out1(XLXN_494[15:0]), 
+                             .out2(XLXN_495[15:0]));
+   ram_14x16_MUSER_cpu_pipelined  XLXI_49 (.ADDR(XLXN_548[15:0]), 
                                           .CLK(XLXN_316), 
                                           .D_IN(MEMDATA[15:0]), 
-                                          .WE(MEMWE), 
+                                          .WE(XLXN_549), 
                                           .D_OUT(MEMOUT[15:0]));
    mux_2to1_16bit  XLXI_50 (.in1(MEMOUT[15:0]), 
                            .in2(XLXN_368[15:0]), 
-                           .sel(XLXN_372), 
-                           .muxout(WBDATA[15:0]));
+                           .sel(XLXN_550), 
+                           .muxout(XLXN_551[15:0]));
    IF_DE_pipeline  XLXI_54 (.clk(XLXN_316), 
                            .ext_in(EXTIN[15:0]), 
-                           .rom_data_in(instr_in_DUMMY[15:0]), 
-                           .rst(XLXN_477), 
-                           .ext_in_out(EXTIN_OUT_DUMMY[15:0]), 
-                           .instr_out(instr_out_DUMMY[15:0]));
+                           .rom_data_in(instr_in[15:0]), 
+                           .rst(XLXN_499), 
+                           .ext_in_out(EXTIN_OUT[15:0]), 
+                           .instr_out(instr_out[15:0]));
+   DE_EX_pipeline  XLXI_55 (.aludest_i(XLXN_501[1:0]), 
+                           .alumode_i(XLXN_500[2:0]), 
+                           .clk(XLXN_316), 
+                           .memwe_i(XLXN_502), 
+                           .mux1out1_i(XLXN_494[15:0]), 
+                           .mux1out2_i(XLXN_495[15:0]), 
+                           .mux2out_i(XLXN_496[15:0]), 
+                           .regwe_i(XLXN_504), 
+                           .regwrtaddr_i(XLXN_506[2:0]), 
+                           .regwrtsrc_i(XLXN_503), 
+                           .rst(XLXN_499), 
+                           .aludest(XLXN_533[1:0]), 
+                           .alumode(XLXN_532[2:0]), 
+                           .memwe(XLXN_549), 
+                           .mux1out1(XLXN_530[15:0]), 
+                           .mux1out2(XLXN_548[15:0]), 
+                           .mux2out(XLXN_531[15:0]), 
+                           .regwe(XLXN_552), 
+                           .regwrtaddr(XLXN_553[2:0]), 
+                           .regwrtsrc(XLXN_550));
 endmodule

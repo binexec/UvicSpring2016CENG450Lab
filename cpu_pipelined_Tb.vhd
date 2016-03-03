@@ -18,11 +18,7 @@ ARCHITECTURE behavioral OF cpu_pipelined_tb IS
           --INSTR	:	IN	STD_LOGIC_VECTOR (15 DOWNTO 0); 
           OUTPUT	:	OUT	STD_LOGIC_VECTOR (15 DOWNTO 0);
 			 EXT_IN	:	IN	STD_LOGIC_VECTOR (15 DOWNTO 0);
-			 addr     : in  std_logic_vector (6 downto 0);
-			 
-			 INSTR_IN	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0);	 
-			 INSTR_OUT	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0);  
-			 EXTIN_OUT	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+			 addr     : in  std_logic_vector (6 downto 0)
 			 );
    END COMPONENT;
 
@@ -34,10 +30,6 @@ ARCHITECTURE behavioral OF cpu_pipelined_tb IS
    SIGNAL OUTPUT	:	STD_LOGIC_VECTOR (15 DOWNTO 0);
 	SIGNAL EXT_IN	: STD_LOGIC_VECTOR (15 DOWNTO 0):= (others => '0');	
 	signal addr : std_logic_vector (6 downto 0)	:= (others => '0');		
-	
-	SIGNAL INSTR_IN	: STD_LOGIC_VECTOR (15 DOWNTO 0);
-	SIGNAL INSTR_OUT	: STD_LOGIC_VECTOR (15 DOWNTO 0); 
-	SIGNAL EXTIN_OUT	: STD_LOGIC_VECTOR (15 DOWNTO 0); 
 	
 	-- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -52,11 +44,7 @@ BEGIN
 		--INSTR => INSTR, 
 		OUTPUT => OUTPUT,
 		EXT_IN => EXT_IN,
-		addr => addr,
-		
-		INSTR_IN => INSTR_IN,
-		INSTR_OUT => INSTR_OUT,
-		EXTIN_OUT => EXTIN_OUT
+		addr => addr
    );
 	
 	-- Clock process definitions

@@ -48,18 +48,18 @@ begin
 			pipereg(2) <= pipereg(1);
 			pipereg(1) <= pipereg(0);
 			pipereg(0) <= mux1out1_i & mux1out2_i & mux2out_i & regwe_i & regwrtaddr_i & alumode_i & aludest_i & memwe_i & regwrtsrc_i; 	
-		elsif falling_edge(clk) then
-			mux1out1 <= pipereg(4)(58 downto 43);
-			mux1out2 <= pipereg(4)(42 downto 27);
-			mux2out <= pipereg(4)(26 downto 11);
-			regwe <= pipereg(4)(10);
-			regwrtaddr <= pipereg(4)(9 downto 7);
-			alumode <= pipereg(4)(6 downto 4);
-			aludest <= pipereg(4)(3 downto 2);
-			memwe <= pipereg(4)(1);
-			regwrtsrc <= pipereg(4)(0);
 		end if;
 	end process;
+	
+	mux1out1 <= pipereg(4)(58 downto 43);
+	mux1out2 <= pipereg(4)(42 downto 27);
+	mux2out <= pipereg(4)(26 downto 11);
+	regwe <= pipereg(4)(10);
+	regwrtaddr <= pipereg(4)(9 downto 7);
+	alumode <= pipereg(4)(6 downto 4);
+	aludest <= pipereg(4)(3 downto 2);
+	memwe <= pipereg(4)(1);
+	regwrtsrc <= pipereg(4)(0);
 	
 end Behavioral;
 

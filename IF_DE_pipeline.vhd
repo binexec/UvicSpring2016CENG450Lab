@@ -31,7 +31,7 @@ begin
 	begin
 		if (rst = '1') then
 			ext_in_buffer <= (others => '0');
-		elsif rising_edge(clk) then
+		elsif falling_edge(clk) then
 			ext_in_buffer <= ext_in;
 		end if;
 
@@ -51,12 +51,12 @@ begin
 			pipereg(2) <= pipereg(1);
 			pipereg(1) <= pipereg(0);
 			pipereg(0) <= rom_data_in & ext_in_buffer; 	
-		elsif falling_edge(clk) then
-			--Output the control signals at the bottom of the pipeline register at the falling edge, essentially delaying a clock cycle
-			instr_out <= pipereg(4)(31 downto 16);
-			ext_in_out <= pipereg(4)(15 downto 0);
 		end if;
 	end process;
+	
+	--Output the control signals at the bottom of the pipeline register at the falling edge, essentially delaying a clock cycle
+	instr_out <= pipereg(4)(31 downto 16);
+	ext_in_out <= pipereg(4)(15 downto 0);
 
 end Behavioral;
 
